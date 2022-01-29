@@ -128,7 +128,7 @@ def dateTime(path: Path): Option[LocalDateTime] = {
             m.group(4).toInt, // hour
             m.group(5).toInt, // minute
             m.group(6).toInt, // second
-            m.group(7).toInt * 1000000 // nanosecond
+            m.group(7).toInt * 1000000 // nanoOfSecond
           )
         },
       raw"(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})(\d{3})_iOS\.(MOV|mp4)".r
@@ -140,7 +140,7 @@ def dateTime(path: Path): Option[LocalDateTime] = {
             m.group(4).toInt, // hour
             m.group(5).toInt, // minute
             m.group(6).toInt, // second
-            m.group(7).toInt * 1000000 // nanosecond
+            m.group(7).toInt * 1000000 // nanoOfSecond
           )
         }
     ).flatMap { case (pattern, toLocalDateTime) =>

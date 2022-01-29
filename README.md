@@ -1,4 +1,4 @@
-# Backup photo
+# backup-photo
 
 写真や動画を、対象のフォルダの `yyyy-MM` フォルダにコピーします。写真は Exif 情報から撮影時刻（Date/Time Original）を取得します。Exif 情報から取得できなかった場合は、ファイル名から撮影時刻を推測します。
 
