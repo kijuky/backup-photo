@@ -10,6 +10,6 @@ jobs:
       - name: Setup Scala
         uses: olafurpg/setup-scala@v13
         with:
-          java-version: adopt@1.11
+          java-version: openjdk@1.17.0
       - name: Check scalafmtCheck
         run: sbt scalafmtCheckAll scalafmtSbtCheck
