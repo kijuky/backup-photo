@@ -7,5 +7,6 @@
 ```shell
 sbt "backupPhoto srcPath1 srcPath2 ... dstPath"
 ```
+
 - srcPathN: コピー元のディレクトリ。サブディレクトリにある写真も対象。
 - dstPath: コピー先のディレクトリ。
