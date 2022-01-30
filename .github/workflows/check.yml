@@ -12,4 +12,4 @@ jobs:
         with:
           jvm: zulu:17.0.0
       - name: Check scalafmtCheck
-        run: sbtn scalafmtCheckAll scalafmtSbtCheck
+        run: sbt scalafmtCheckAll scalafmtSbtCheck
