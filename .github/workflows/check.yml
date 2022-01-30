@@ -10,6 +10,6 @@ jobs:
       - name: Install Scalafmt
         uses: coursier/setup-action@v1.1.2
         with:
-          jvm: zulu:17.0.1
+          jvm: zulu:17.0.0
       - name: Check scalafmtCheck
-        run: sbtn scalafmtCheckAll scalafmtSbtCheck
+        run: sbt scalafmtCheckAll scalafmtSbtCheck
