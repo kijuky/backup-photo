@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.0
-      - name: Install Scalafmt
-        uses: coursier/setup-action@v1.1.2
+      - name: Setup Scala
+        uses: olafurpg/setup-scala@v13
         with:
-          jvm: zulu:17.0.0
+          java-version: openjdk@1.17.0
       - name: Check scalafmtCheck
         run: sbt scalafmtCheckAll scalafmtSbtCheck
