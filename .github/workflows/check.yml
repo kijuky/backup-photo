@@ -10,6 +10,6 @@ jobs:
       - name: Install Scalafmt
         uses: coursier/setup-action@v1.1.2
         with:
-          jvm: temurin:1.17.0.2
+          jvm: temurin:1.17
       - name: Check scalafmtCheck
         run: sbtn scalafmtCheckAll scalafmtSbtCheck
