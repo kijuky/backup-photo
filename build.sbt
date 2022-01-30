@@ -73,7 +73,7 @@ def dateTime(path: Path): Option[LocalDateTime] = {
         -> { m =>
           LocalDateTime.ofInstant(
             Instant.ofEpochMilli(m.group(1).toLong),
-            ZoneId.systemDefault()
+            ZoneId.systemDefault
           )
         },
       raw"dvr_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})\.mp4".r
