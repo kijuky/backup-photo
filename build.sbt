@@ -38,8 +38,10 @@ backupPhoto := {
           paths.foreach { path =>
             Try {
               val src = path
-              val dst = dstPath.resolve(yearMonth).resolve(path.getFileName)
+              val dstDir = dstPath.resolve(yearMonth)
+              val dst = dstDir.resolve(path.getFileName)
               print(path)
+              dstDir.toFile.mkdirs()
               Files.move(src, dst, REPLACE_EXISTING)
               println(s" -> $dst")
             }.recover { case e: Exception =>
