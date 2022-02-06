@@ -41,7 +41,7 @@ backupPhoto := {
               val dstDir = dstPath.resolve(yearMonth)
               val dst = dstDir.resolve(path.getFileName)
               print(path)
-              dstDir.toFile.mkdirs()
+              Files.createDirectories(dstDir)
               Files.move(src, dst, REPLACE_EXISTING)
               println(s" -> $dst")
             }.recover { case e: Exception =>
@@ -97,6 +97,18 @@ def dateTime(path: Path): Option[LocalDateTime] = {
             m.group(4).toInt, // hour
             m.group(5).toInt, // minute
             m.group(6).toInt // second
+          )
+        },
+      raw"IMG_(\d{4})-(\d{2})-(\d{2})-(\d{2})(\d{2})(\d{2})(\d{2})\.jpg".r
+        -> { m =>
+          LocalDateTime.of(
+            m.group(1).toInt, // year
+            m.group(2).toInt, // month
+            m.group(3).toInt, // dayOfMonth
+            m.group(4).toInt, // hour
+            m.group(5).toInt, // minute
+            m.group(6).toInt, // second
+            m.group(7).toInt * 10000000 // nanoOfSecond
           )
         },
       raw"Screenshot_(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})\.png".r
