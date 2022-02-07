@@ -133,7 +133,7 @@ def dateTime(path: Path): Option[LocalDateTime] = {
             m.group(6).toInt // second
           )
         },
-      raw"PXL_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})(\d{3})\.mp4".r
+      raw"PXL_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})(\d{3})(~\d+)?\.mp4".r
         -> { m =>
           LocalDateTime.of(
             m.group(1).toInt, // year
