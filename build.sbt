@@ -19,8 +19,8 @@ backupPhoto := {
       val srcPath = Paths.get(src)
       val dstPath = Paths.get(args.last)
 
-      // println(srcPath)
-      // println(dstPath)
+      // println(s"src: $srcPath")
+      // println(s"dst: $dstPath")
 
       Files
         .walk(srcPath, Int.MaxValue)
@@ -133,7 +133,7 @@ def dateTime(path: Path): Option[LocalDateTime] = {
             m.group(6).toInt // second
           )
         },
-      raw"PXL_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})(\d{3})(~\d+)?\.mp4".r
+      raw"PXL_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})(\d{3})(~\d+)?(\.LS)?\.mp4".r
         -> { m =>
           LocalDateTime.of(
             m.group(1).toInt, // year
